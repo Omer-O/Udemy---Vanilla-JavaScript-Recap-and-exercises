@@ -20,7 +20,7 @@ let square = function (num) {
 square();//will print undefined
 
 let result = square();
-console.log(result);// will print 2 times undefined
+console.log(result);// will print undefined: first - when call the function. second - when .log result.
 
 let age = 34;
 

@@ -1,3 +1,4 @@
+//Scope tree:
 //Global (name)
     //Local (name)
         //Local
@@ -17,12 +18,16 @@ if (true) {
     console.log(name);//will print Local - Daniel than Global - Omer
 }
 
+
+//Problem : 
+// name is not diclaired with LET - scope leack - not wanted
+// we have to declaire a variable to 'control' it.
+
 //Global 
     //Local 
         //Local
     //Local
-// name is not diclaired with LET - scope leack - not wanted
-// we have to declaire a variable to 'control' it.
+
     if (true) {
         //let name = 'Daniel';
         if (true) {

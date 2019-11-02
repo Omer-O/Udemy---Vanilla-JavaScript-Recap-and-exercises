@@ -1,4 +1,4 @@
-//Funjction - input (argument), code, output (return value)
+//Function - input (argument), code, output (return value)
 
 let greetUser = function () {
     console.log('welcome user'); 
@@ -11,13 +11,13 @@ let square = function (num) {
     return result;
 }
 
-let value = square(3); //store the fumction call in a variable
-let valueTwo = square(10); //store the fumction call in a variable
+let value = square(3); //store the function call in a variable.
+let valueTwo = square(10); //store the function call in a variable.
 
 console.log(value);
 console.log(valueTwo);
 
-//Challenge
+//Challenge:
 
 //converFarenheitToCelsius
 

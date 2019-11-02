@@ -7,7 +7,7 @@
 // In a scope you can access variables defined in that scope, or in any
     // parent/
 
-//tree in the code: 
+//Scope tree: 
     //Global scope (varOne) - in the global scope (not inside a code block)
         //local Scope (varTwo) - inside a code block
             //local Scope (varFour) - nested inside a code block

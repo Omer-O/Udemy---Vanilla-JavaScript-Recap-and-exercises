@@ -1,3 +1,4 @@
+//Scope tree:
 // Global Scope (converFarenheitToCelsius, tempOne, TempTwo)
     // Local scope (fahrenheit, celcius)
         // Local scope (isFreezing)
