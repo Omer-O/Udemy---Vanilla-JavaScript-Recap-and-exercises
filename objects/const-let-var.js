@@ -1,3 +1,31 @@
+//var: we can redeclair a variable in the same programm -- 
+//problematic in multiple files and functions code.
+
+if (10 ===10) {
+    var firstName = 'Omer'
+}
+console.log(firstName); //will print firstName --
+// with let and const will resolve with an error -- because they are block scoped.
+//var has a function based scope - if we dont create a new function we dont create a new scope
+//
+
+const setName = function () {
+    var firstName = 'Omer'
+}
+setName();//we call the function -- var will run.
+console.log(firstName);//we cannot access var -- 
+//will resolve with an error -- var is a function based scope.
+
+
+//another issue with var:
+console.log(name);
+var name; 
+//will resolve as undefined -- rather that 'not declaired' -- declaration of var get hoisted to the top of the scope
+name = 'poter'
+console.log(name);
+var name; 
+//although name declaired down in the code -- var get hoisted to the top of the scope -- means
+//we will get log 'poter' -- rather than undefined. 
 
 //let:
 let isRainy = true;//assign
