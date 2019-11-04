@@ -1,7 +1,7 @@
 const notes = ['note 1', 'note 2', 'note 3'];
 //length - number of items in the array + 1.
 notes.length;
-console.log(notes.length);//length will give us 3 but we actually got 0 1 2 
+console.log(notes.length);//length will give us 3 but we actually got 0 1 2 + 1 = 3
 
 //braket notation: name of the variable and [] inside we write number. 
 console.log(notes[0]);//will resolve - 'note 1'
@@ -31,3 +31,31 @@ notes.push('new note');//add to the end of the array -- needs argument
 console.log(notes);
 
 
+//looping:
+
+//forEach.
+notes.forEach(function (item, index) { //callback function - a function we call in another function.
+    console.log(index);//will print the index of the item in the array.
+    console.log(item);//will print the item itself in the array.
+})
+
+//counting ...1 :
+//for loop
+for (let i=0; i <= 2; i++) {// i - runs 1 time; true or false; increase the count (0 to 1 to 2 etc.)
+    console.log(i);
+    
+}
+for (let i=4; i >= 0; i--) {// count down - reverse
+    console.log(i);
+}
+
+//for loop in array:
+for (let count = 0; count < notes.length; count++) {//local scoping to the for statment.
+    //to pull out the info will use braket notation - 
+    //calling the array[the variable we declaied]
+    console.log(notes[count]);
+}
+//count in reverse:
+for (let count = notes.length -1; count >= 0; count--) {
+    console.log(notes[count]);
+}
