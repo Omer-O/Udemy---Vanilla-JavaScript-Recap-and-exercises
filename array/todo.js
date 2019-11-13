@@ -31,15 +31,15 @@ toDo.forEach(function (item, index) {
 });
 
 //Challenge 4: for statment loop
+//log the number of tesk + the tesk.
 for (let i=0; i < toDo.length; i++) {
     const num = i + 1;
     const todo = toDo[i]
     console.log(`${num}. ${todo}`);
 }
 
-//Challenge 5: 
-//1. convert array to array of objects --> with 2 properties: text (we got), completed: true if completed or false
-//2. create a function to remove a todo by text value.
+
+//Array of objects:
 const toDoArray = [ {
     text: 'Recap Javascript',
     completed: true
@@ -61,13 +61,33 @@ const toDoArray = [ {
     completed: false
 }]
 
+//Challenge 5: 
+// create a function to remove a tesk by text value.
+
 const deleteToDo = function (notes, noteTitle) {
      const index = notes.findIndex(function (note) {
-        return note.text.toLowerCase() === noteTitle.toLowerCase()
-    })
+        return note.text.toLowerCase() === noteTitle.toLowerCase();
+    });
     if (index > -1) { //if greater than -1 we know we have a match
         notes.splice(index, 1) //index-the item, 1-how many to delete.
-    }
-}
+    };
+};
 deleteToDo(toDoArray, 'water my plants'); //will delete our text. 
 console.log(toDoArray);
+
+
+
+//Challenge 6: 
+//delete from array tesks that are done (=true) -- return a filtered array.
+
+const getThingsDone = function (todos) {
+    //return the filtered array
+    return todos.filter(function (todo) {
+        //pass the indevidual property and check if true or false
+        return !todo.completed //will return false 
+        //can alsso be writen:
+    //return indevidualToDo.completed === false//will return false 
+    });
+};
+
+console.log(getThingsDone(toDoArray));

@@ -97,6 +97,20 @@ const findNote = function (notes, noteTitle) {
 const noteArray = findNote(notes, 'last travel');//pass the array to search and the search text we look for.
 console.log(noteArray);
 
+//filter();
+
+const findNotes = function (notes, query) {//query will allow accsses to user's text.
+    return  notes.filter(function (note, index) {
+        const isTitleMatch = note.title.toLocaleLowerCase().includes(query.toLowerCase());//creating a variable that
+        //check the array(note)property(title)cxl case sensitivety(toLower)if includes(includes).
+        const isBodyMatch = note.body.toLocaleLowerCase().includes(query.toLowerCase());//same as above we do to Body property
+        return isTitleMatch || isBodyMatch;
+    });
+}
+
+
+console.log(findNotes(notes, 'trip'));
+
 
 //findIndex: will allow us to work with array of objects:
 
