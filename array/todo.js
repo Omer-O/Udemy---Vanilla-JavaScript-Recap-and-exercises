@@ -62,7 +62,7 @@ const toDoArray = [ {
 }]
 
 //Challenge 5: 
-// create a function to remove a tesk by text value.
+//create a function to remove a tesk by text value.
 
 const deleteToDo = function (notes, noteTitle) {
      const index = notes.findIndex(function (note) {
@@ -85,9 +85,31 @@ const getThingsDone = function (todos) {
     return todos.filter(function (todo) {
         //pass the indevidual property and check if true or false
         return !todo.completed //will return false 
-        //can alsso be writen:
+        //different writen:
     //return indevidualToDo.completed === false//will return false 
     });
 };
 
 console.log(getThingsDone(toDoArray));
+
+
+//Challenge 7: 
+//function that sort the Array list, first false, than true. 
+
+const sortlist = function (todo) {
+    todo.sort(function (a, b) {
+        //check if A wasn't completed will come before B
+        if (!a.completed && b.completed) {
+            //return a (false) first.
+            return -1;
+            //check if B wasn't completed will come before A
+        } else if (!b.completed && a.completed) {
+            //return b (false) first.
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+}
+sortlist(toDoArray);
+console.log("Im sorted!!", toDoArray);

@@ -1,13 +1,13 @@
 let num = 103.941;
 
-//toFixed() - how many decimal we will use
+//toFixed() - num. of decimal to use
 console.log(num.toFixed(2));
-//Math.round() -- will round it up or down
+//Math.round() - round up/down
 console.log(Math.round(num));
 console.log(Math.floor(num));
 console.log(Math.ceil(num));
 
-//Math.rendom() -- generate a rendom number between 0 to 0.999999999 (not 1). 
+//Math.rendom() - generate a rendom number between 0 to 0.999999999 (not 1). 
 let randomNum = Math.random();
 console.log(randomNum);
 
