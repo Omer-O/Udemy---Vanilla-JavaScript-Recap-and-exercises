@@ -7,7 +7,7 @@ let myAccount = {
 let otherAccount = myAccount;//create binding - if we will modify otherAccount myAccount will
 //be affected as well.
 otherAccount.income = 1000;//will modify the property income of myAccount.
-let addExpense = function(account, amount) {//we eant to manipulate the expense property in the account onj.
+let addExpense = function(account, amount) {//we eant to manipulate the expense property in the account obj.
     account.expenses = account.expenses + amount;//this will change the number in the account's expenses property
    // console.log(account);
     
