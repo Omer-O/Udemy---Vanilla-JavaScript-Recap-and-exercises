@@ -19,8 +19,9 @@ const saveTodos = function (toDoArray) {
 
 //remove item from Array:
 const removeTodoItem = function (id) {
+//return match index
     const itemIndex = toDoArray.findIndex(function (todo) {
-        console.log('this is todo from findIndex', todo);
+//get the id of clicked item
         return todo.id === id;
     });
     //if bigger the -1 we have a match (true)
@@ -29,21 +30,33 @@ const removeTodoItem = function (id) {
     }
     return
 };
-
-//Render application todos based on filters:
+//modify the correct object completed property:
+const toggleTodo = function (id) {
+//find() - return actual match
+    const todo = toDoArray.find(todo => {
+//get the id of hte clicked item
+        return todo.id === id;
+    });
+    //if no match
+    if (todo !== undefined) {
+        todo.completed = !todo.completed;
+    }
+}
+//Render application list based on filters:
     const renderTodos = function(todos, filters) {
       const filteredTodos = todos.filter(function(todos) {
          const searchMatched = todos.text.toLowerCase().includes(filters.searchText.toLowerCase());
          const hideMatched = !filters.hideCompleted || !todos.completed;
          return searchMatched && hideMatched;
       });
+      //msg incomplete tasks
       const incomplete = filteredTodos.filter(todo => {
         return !todo.completed;
       });
-       //clear input field:
+      //clear input field
       document.querySelector("#todos").innerHTML = "";
       document.querySelector("#todos").appendChild(generateSummaryDOM(incomplete));
-      //Add a <p> to the todo list (text value)
+      //Add <p> to list (text value)
       filteredTodos.forEach(todo => {
           document.querySelector("#todos").appendChild(generateTodoDOM(todo));
       });
@@ -59,7 +72,13 @@ const generateTodoDOM = function (todo) {
 
     //setup checkbox
     todoCheckBox.setAttribute("type", "checkbox");
+    todoCheckBox.checked = todo.completed;
     todoContainer.appendChild(todoCheckBox);
+    todoCheckBox.addEventListener('change', function () {
+        toggleTodo(todo.id);
+        saveTodos(toDoArray);
+        renderTodos(toDoArray, filters);
+    })
 
     //setup text
     todoEl.setAttribute("id", "todos");
